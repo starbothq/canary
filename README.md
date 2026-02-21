@@ -130,4 +130,4 @@ Alternatively, connect the repo on [vercel.com/new](https://vercel.com/new):
 
 ## 📄 License
 
-Private — © Starbot Coffee Ltd.
+Private — © Starbot Ltd.
