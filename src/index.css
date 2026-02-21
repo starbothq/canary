@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #ffffff;
+    background: #000000;
+  }
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+/* Liquid glass card utility */
+.liquid-glass {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: clamp(12px, 1.2vw, 24px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Specular highlight at top-left */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(ellipse at 20% 20%,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Responsive slide layouts ── */
+
+.slide-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5.2%;
+}
+
+.slide-two-col {
+  display: flex;
+  gap: 5%;
+  flex: 1;
+  min-height: 0;
+}
+
+.slide-three-col {
+  display: flex;
+  gap: 4%;
+  flex: 1;
+  min-height: 0;
+}
+
+.slide-card-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.slide-card-row {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+
+  /* Allow slide content to scroll on mobile */
+  .slide-content {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 6%;
+  }
+
+  /* Stack columns vertically */
+  .slide-two-col,
+  .slide-three-col {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .slide-two-col>div,
+  .slide-three-col>div {
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  /* Stack card rows */
+  .slide-card-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .slide-card-row>.liquid-glass {
+    flex: none !important;
+    min-height: auto !important;
+  }
+
+  /* Card column gap */
+  .slide-card-col {
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  /* Glass cards: reduce padding */
+  .liquid-glass {
+    padding: 16px !important;
+    border-radius: 12px;
+  }
+}
