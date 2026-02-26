@@ -65,7 +65,7 @@ export function EfficiencySlide() {
                             opacity: 0.8,
                         }}
                     >
-                        Page 008
+                        Page 009
                     </span>
                 </div>
 

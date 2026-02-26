@@ -32,7 +32,7 @@ export function VisionSlide() {
                             opacity: 0.8,
                         }}
                     >
-                        Page 009
+                        Page 010
                     </span>
                 </div>
 

@@ -63,7 +63,7 @@ export function DeploymentSlide() {
                             opacity: 0.8,
                         }}
                     >
-                        Page 005
+                        Page 008
                     </span>
                 </div>
 
