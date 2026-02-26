@@ -71,7 +71,7 @@ export function CoverSlide() {
                             fontWeight: 500,
                         }}
                     >
-                        in Premium Real Estate
+                        in Canary Wharf
                     </p>
                 </div>
 
